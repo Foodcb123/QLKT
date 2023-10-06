@@ -217,5 +217,19 @@ namespace QLKT
             string tablename = "HienThiThongTinTongQuat";
             load(tablename);
         }
+
+        private void tổngTiềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thongke tk = new Thongke();
+            tk.Show();
+            this.Hide();
+        }
+
+        private void ngườiĐangThuêPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKeNguoiDangThue tk = new ThongKeNguoiDangThue();
+            tk.Show();
+            this.Hide();
+        }
     }
 }

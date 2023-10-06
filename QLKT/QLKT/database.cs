@@ -15,7 +15,7 @@ namespace QLKT
     {
 
 
-        string stringconnect = @"Data Source=SIILO;Initial Catalog=QLKT2;Integrated Security=True";
+        string stringconnect = @"Data Source=LAPTOP-Q300FTPF\SQLEXPRESS;Initial Catalog=QLKT3;Integrated Security=True";
         public SqlConnection connector;
         public SqlCommand commander;
         public SqlDataAdapter adapter;

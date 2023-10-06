@@ -109,7 +109,6 @@ namespace QLKT
 
         private void ngườiThuêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
             string tablename = "HienThiThongTinHopDong";
             load(tablename);
         }
@@ -216,18 +215,6 @@ namespace QLKT
             }
         }
 
-        private void đãChoThuêToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string tablename = "PhongDaThue";
-            load(tablename);
-        }
-
-        private void chưaChoThuêToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string tablename = "PhongChuaThue";
-            load(tablename);
-        }
-
         private void thôngTinPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string tablename = "HienThiThongTinPhongThue";
@@ -238,6 +225,32 @@ namespace QLKT
         {
             string tablename = "HienThiThongTinTongQuat";
             load(tablename);
+        }
+
+        private void tổngTiềnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thongke tk = new Thongke();
+            tk.Show();
+            this.Hide();
+        }
+
+        private void đãChoThuêToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string tablename = "PhongDaThue";
+            load(tablename);
+        }
+
+        private void chưaChoThuêToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string tablename = "PhongChuaThue";
+            load(tablename);
+        }
+
+        private void ngườiĐangThuêPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKeNguoiDangThue tk = new ThongKeNguoiDangThue();
+            tk.Show();
+            this.Hide();
         }
     }
 }

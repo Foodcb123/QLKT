@@ -1,5 +1,6 @@
-﻿CREATE DATABASE QLKT2
-USE QLKT2
+﻿CREATE DATABASE QLKT3
+go
+USE QLKT3
 
 CREATE TABLE phongtro (
     sophong INT PRIMARY KEY,
@@ -47,6 +48,22 @@ FULL JOIN
 
 
 
+-- Thống Kê Tiền Phòng Trọ
+create proc ThongKeTP
+as
+select hd.mahopdong as 'Mã Hợp Đồng', pt.sophong as 'Số Phòng', hd.hovatennguoithue as 'Họ Tên',
+pt.tiendien as 'Tiền Điện', pt.tiennuoc as 'Tiền Nước', pt.tienmang as'Tiền Mạng', pt.giathue as 'Tiền Phòng',
+(pt.tiendien + pt.tiennuoc + pt.tienmang + pt.giathue) as 'Tổng Tiền Phòng Trọ'
+from hopdongthue hd, phongtro pt
+where hd.sophong = pt.sophong
+
+-- Thống Kê Người Đang Thuê
+create proc ThongKeNguoiDangThue
+as
+select hd.mahopdong as 'Mã Hợp Đồng', pt.sophong as 'Số Phòng', hd.cancuoccongdannguoithue as 'Căn Cước Công Dân', hd.hovatennguoithue as 'Họ Tên',
+hd.sodienthoainguoithue as 'Số Điện Thoại', hd.ngaybatdau as 'Ngày Thuê', hd.ngayketthuc as 'Ngày Trả Phòng'
+from hopdongthue hd, phongtro pt
+where hd.sophong = pt.sophong and hd.ngayketthuc > getdate()
 
 -- Hiển thị phòng đã thuê
 CREATE PROC PhongDaThue AS 
